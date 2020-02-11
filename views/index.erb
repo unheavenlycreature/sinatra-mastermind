@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mastermind</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="<%= url('/styles.css') %>">
+  </head>
+  <body>
+    <h1>Mastermind</h1>
+
+    <% unless @message.nil? %>
+      <div class="message"><%= @message %></div>
+    <% end %>
+
+    <div class="board">
+      <% 12.times do |iter| %>
+        <%= erb :row, locals: {row_num:iter, colors: @session["colors_#{11 - iter}"]}%>
+      <% end %>
+    </div>
+
+    <form action="guess" method="post">
+      <% %w[f s t fo].each do |piece| %>
+        <select name="<%= piece %>">
+          <%= erb :options %>
+        </select>
+      <% end %>
+      <input type="submit" value="Guess"/>
+    </form>
+  </body>
+</html>

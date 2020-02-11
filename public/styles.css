@@ -1,0 +1,90 @@
+body {
+  background-color: #f38eb0;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.row-0 {
+  border-top: 2px solid black;
+  border-radius: 10px 10px 0 0;
+}
+
+.row-11 {
+  border-bottom: 2px solid black;
+  border-radius: 0 0 10px 10px;
+}
+
+.board,
+.message {
+  margin-bottom: 16px;
+}
+
+.row {
+  width: 300px;
+  height: 48px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  background-color: #795548;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 10% 10%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "m1 m2 m3 m4 g1 g2"
+    "m1 m2 m3 m4 g3 g4";
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+}
+
+.m1 {
+  grid-area: m1;
+}
+.m2 {
+  grid-area: m2;
+}
+
+.m3 {
+  grid-area: m3;
+}
+
+.m4 {
+  grid-area: m4;
+}
+
+.g1 {
+  grid-area: g1;
+}
+
+.g2 {
+  grid-area: g2;
+}
+
+.g3 {
+  grid-area: g3;
+}
+
+.g4 {
+  grid-area: g4;
+}
+
+.peg {
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #ad9187;
+}
+
+.main-peg {
+  height: 30px;
+  width: 30px;
+}
+
+.guess-peg {
+  height: 10px;
+  width: 10px;
+}

@@ -1,0 +1,8 @@
+<div class="row row-<%=row_num%>">
+  <% 8.times do |iter| %>
+    <% classes = "m#{iter + 1} main-peg" if iter < 4 %>
+    <% classes = "g#{iter - 3} guess-peg" if iter >= 4 %>
+    <% color = colors.nil? ? nil : colors[iter] %>
+    <%= erb :peg, locals: {color: color, classes: classes} %>
+  <% end %>
+</div>
